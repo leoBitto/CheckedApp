@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+*{
+  box-sizing:border-box;
+  font-family:'Roboto', sans-serif;
+}
+
+h1{
+  font-size:25px;
+  display:block;
+  line-height:65px;
+  text-indent:-30px;
+  margin:0px 15px;
+}
+#container{
+  display:flex;
+  flex-flow:column;
+  align-items: stretch;
+  background-color:rgba(191, 190, 190, 0.26);
+  margin:auto;
+  height:100%;
+  width:100%;
+}
+#header{
+  flex:0.5;
+  order:1;
+  z-index:5;
+  width:100%;
+  padding:20px 30px;
+  color:white;
+  background:#329c38;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  display:flex;
+  justify-content:space-around;
+  min-height:100px;
+  max-height: 150px;
+  box-shadow: 0px 2px 4px rgba(44,62,80,0.15)
+}
+#container_2{
+  border:none;
+  width:99%;
+  display:flex;
+  margin:auto;
+}
+#container_2 input{
+  order:1;
+  flex:8;
+  border: none;
+  padding: 10px;
+  font-size: 20px;
+  background-color:rgba(255, 255, 255, 0.15);
+  color:white;
+  border-top-left-radius:5px;
+  border-bottom-left-radius: 5px;
+}
+#input::-webkit-input-placeholder{
+  color: rgba(255,255,255,0.75);
+}
+#input:-moz-input-placeholder{
+  color: rgba(255,255,255,0.75);
+}
+#input::-moz-input-placeholder{
+  color: rgba(255,255,255,0.75);
+}
+#input:-ms-input-placeholder{
+  color: rgba(255,255,255,0.75);
+}
+#container_2 button{
+  order:2;
+  flex:0 1;
+  background:rgba(255, 255, 255, 0.15);
+  cursor: pointer;
+  border:none;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+#container_2 button svg{
+  border-radius:25px;
+  background-color:white;
+  height:54px;
+  width:54px;
+}
+/*FINE HEADER*/
+
+
+.lists{
+  flex:3;
+  order:2;
+}
+ul{
+  margin:20px 0px;
+  padding:0;
+  display:flex;
+  flex-flow:column;
+  justify-content:space-around;
+  align-items:stretch;
+}
+ul li{
+  cursor:pointer;
+  min-height:50px;
+  text-indent:10px;
+  font-size:30px;
+  margin:1px 5px;
+  padding:12px 8px;
+  background-color:#fff;
+  box-shadow: 0px 1px 2px rgba(44,62,80,0.15);
+  border-radius: 5px;
+  display:flex;
+  justify-content:space-between;
+  word-break: break-word;
+}
+.buttons{display:flex;}
+.buttons button{
+  border:none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color:rgba(255, 255, 255, 0);
+  cursor:pointer;
+  display:inline;
+}
+.buttons button svg{
+  width:25px;
+  height:25px;
+  margin:0px 10px;
+}
+.buttons button svg .fill{
+  transition:fill 0.2s ease;
+  -moz-transition:fill 0.2s ease;
+  -webkit-transition:fill 0.2s ease;
+  -ms-transition:fill 0.2s ease;
+  -o-transition:fill 0.2s ease;
+}
+.buttons .remove svg path.fill{
+  fill:#636d6b;
+}
+.buttons .remove:hover svg path.fill{
+  fill:#e85656;
+}
+.buttons .complete svg{
+  border-radius:15px;
+  border:2px solid #25b99a;
+}
+.buttons .complete svg path.fill{
+  fill:#329c38;
+}
+.buttons .complete:hover svg path.fill{
+  fill:#fff;
+}
+#donelist li .buttons button.complete svg{
+  background:#329c38;
+  border:0;
+  transition:background 0.2s ease;
+}
+:not(#donelist) li .buttons button.complete:hover svg{
+  background:#329c38;
+}
+#donelist li .buttons button.complete svg .fill{
+  fill:#fff;
+}
+.noFill{
+  fill:none;
+}
+hr{
+border: 0;
+height: 2px;
+background: rgba(50, 156, 56, 0.50);
+order: 2;
+width: 60%;
+margin: auto;
+}
+#todolist:empty::after{
+  content:"Non hai niente da fare!";
+  text-align:center;
+  color:#84c191;
+  font-size:15px;
+  padding:30px 0px;
+  display:block;
+  width;60%;
+  margin:auto;
+}
+#donelist:empty::before{
+  content:"Hey, non hai ancora fatto niente!";
+  text-align:center;
+  color:#84c191;
+  font-size:15px;
+  padding:30px 0px;
+  display:block;
+  width;60%;
+  margin:auto;
+}
+
+/*sopra i 1440px*/
+@media screen and (max-width:1024px){
+  h1{
+    display:none;
+  }
+  li{
+    font-size: 30px;
+  }
+}
+/*sotto i 425px*/
+@media screen and (max-width:425px){
+  li{
+    font-size:22px;
+  }
+}

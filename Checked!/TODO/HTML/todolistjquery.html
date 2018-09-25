@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Lista quotidiana - Checked!</title>
+    <meta charset="utf-8">
+        <!--stylesheet-->
+        <link rel="stylesheet" type="text/css" href="../CSS/reset.min.css">
+        <link rel="stylesheet" type="text/css" href="../CSS/stiletodo.css">
+        <!--script-->
+        <script src="../JS/todolistjquery.js" defer></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+
+  <body >
+    <section id="container">
+
+      <header id="header">
+        <div id="container_2">
+          <h1>Checked!</h1>
+          <input id="input" autofocus type="text" placeholder="Cos'hai in programma?"/>
+          <button id="button" >
+            <svg>
+              <circle cx="27" cy="27" r="27" stroke="none" fill="white"/>
+              <line x1="27px" y1="20px" x2="27px" y2="34px" style="stroke:#25b99a; stroke-width:3; stroke-linecap:round;"/>
+              <line x1="20px" y1="27px" x2="34px" y2="27px" style="stroke:#25b99a; stroke-width:3; stroke-linecap:round;"/>
+            </svg>
+          </button>
+        </div>
+      </header>
+
+      <section class="lists">
+        <ul id="todolist" ></ul>
+      </section>
+
+      <hr>
+
+      <section class="lists">
+        <ul id="donelist"></ul>
+      </section>
+
+    </section>
+  </body>
+
+</html>

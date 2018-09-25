@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+*{
+  box-sizing:border-box;
+  font-family:'Roboto', sans-serif;
+}
+.container{
+  height:100%;
+  width:100%;
+  display:flex;
+  flex-flow:column;
+  justify-content:center;
+}
+.titolo{
+  display:flex;
+  flex-flow:column;
+  min-width:100%;
+  order:0;
+  background-color:rgb(50, 156, 56);
+  color:white;
+  text-align: center;
+  min-height: 15%;
+}
+.titolo h1{
+  font-size:1em;
+  letter-spacing: 5px;
+  width:60%;
+  margin:auto;
+}
+.titolo h2{
+  font-size:0.8em;
+  margin:auto;
+  opacity:0.7;
+  letter-spacing: 7px;
+  width:60%;
+}
+.container_1{
+  display:flex;
+  flex-flow:row;
+  order:1;
+  min-height: 85%;
+}
+.clocknav{
+  display:flex;
+  flex-flow:column;
+  order:0;
+}
+.note{
+  display:none;
+}
+#clock{
+  background-color:rgb(50, 156, 56);
+  flex:0 1 auto;
+  min-width:100%;
+  order:0;
+  margin-top:-2px;
+
+}
+#canvas{
+  height: 150px;
+  border-radius: 500px;
+  margin:auto;
+}
+#bordo {
+  border-color: black;
+  border-radius: 500px;
+  border-width: 12px;
+  border-style: solid;
+  width: 350px;
+  margin: auto;
+  height: 350px;
+  box-shadow: inset -4px 2px 17px 2px rgba(0, 0, 0, 0.7),
+              inset 6px 4px 21px rgba(0, 0, 0, 0.7);
+  background-image:  url(/home/leo/Documenti/WEB/TO_DO_LIST_APP/IMG/clock_2.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  display:flex;
+}
+nav {
+  background-color:rgb(50, 156, 56);
+  flex: 4 1 auto;
+  order:1;
+  display:flex;
+  justify-content:center;
+  margin-top:-2px;
+  max-height: 60%;
+}
+nav ul {
+  display:flex;
+  justify-content:space-around;
+  flex-flow:column;
+  width:100%;
+  align-items: center;
+}
+nav ul li{
+  width:40%;
+  height:15%;
+  text-align:center;
+  border-radius: 100px;
+  background-color: rgba(127, 243, 0, 0.11);
+  box-shadow:10px 10px 0px rgba(26, 125, 0, 0.88);
+}
+nav ul li a{
+  font-size: 1em;
+  text-decoration:none;
+  color:white;
+  flex:5 1 auto;
+  line-height: 4em;
+}
+@media  screen and (max-width:1024px){
+
+
+  .titolo h1{
+    font-size:1em;
+    letter-spacing: 5px;
+    width:60%;
+    margin:auto;
+  }
+  .titolo h2{
+    font-size:0.8em;
+    margin:auto;
+    opacity:0.7;
+    letter-spacing: 7px;
+    width:60%;
+  }
+
+  #canvas{
+    height: 150px;
+    border-radius: 500px;
+    margin:auto;
+  }
+
+  nav ul li a{
+    font-size: 1em;
+    text-decoration:none;
+    color:white;
+    flex:5 1 auto;
+    line-height: 4em;
+  }
+}
+@media  screen and (max-width:800px){
+
+  .titolo h1{
+    font-size:1em;
+    letter-spacing: 5px;
+    width:60%;
+    margin:auto;
+  }
+  .titolo h2{
+    font-size:0.8em;
+    margin:auto;
+    opacity:0.7;
+    letter-spacing: 7px;
+    width:60%;
+  }
+  .container_1{
+    flex-flow:column;
+  }
+  #clock{
+    background-color:rgb(50, 156, 56);
+    flex:0 1 auto;
+    min-width:100%;
+    order:0;
+    margin-top:-2px;
+  }
+  #canvas{
+    height: 150px;
+    border-radius: 500px;
+    margin:auto;
+  }
+  #bordo {
+    border-color: black;
+    border-radius: 500px;
+    border-width: 12px;
+    border-style: solid;
+    width: 350px;
+    margin: auto;
+    height: 350px;
+    box-shadow: inset -4px 2px 17px 2px rgba(0, 0, 0, 0.7),
+                inset 6px 4px 21px rgba(0, 0, 0, 0.7);
+    background-image:  url(/home/leo/Documenti/WEB/TO_DO_LIST_APP/IMG/clock_2.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display:flex;
+  }
+
+  nav ul li a{
+    font-size: 0.5em;
+    text-decoration:none;
+    color:white;
+    flex:5 1 auto;
+  }
+}
+@media  screen and (max-width:350px){
+
+  .titolo h1{
+    font-size:1em;
+    letter-spacing: 5px;
+    width:60%;
+    margin:auto;
+  }
+  .titolo h2{
+    font-size:0.8em;
+    margin:auto;
+    opacity:0.7;
+    letter-spacing: 7px;
+    width:60%;
+  }
+
+  #canvas{
+    height: 150px;
+    border-radius: 500px;
+    margin:auto;
+  }
+
+  nav ul li a{
+    font-size: 0.5em;
+    text-decoration:none;
+    color:white;
+    flex:5 1 auto;
+  }
+  .note{
+    display:none;
+  }
+}
+@media  screen and (max-width:70px){
+
+}

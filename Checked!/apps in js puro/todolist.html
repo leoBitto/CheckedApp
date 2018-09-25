@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Lista quotidiana - Checked!</title>
+    <meta charset="utf-8">
+        <!--stylesheet-->
+        <link rel="stylesheet" type="text/css" href="/home/leo/Documenti/WEB/TO_DO_LIST_APP/CSS/reset.min.css">
+        <link rel="stylesheet" type="text/css" href="/home/leo/Documenti/WEB/TO_DO_LIST_APP/CSS/stiletodo.css">
+        <!--script-->
+        <script src="/home/leo/Documenti/WEB/TO_DO_LIST_APP/apps in js puro/todo.js" defer></script>
+  </head>
+
+  <body onload="renderTodoList()">
+    <section id="container">
+
+      <header id="header">
+        <div id="container_2">
+          <h1>Checked!</h1>
+          <input id="input" autofocus type="text" placeholder="Cos'hai in programma?"/>
+          <button id="button" onclick="addnew()">
+            <svg>
+              <circle cx="27" cy="27" r="27" stroke="none" fill="white"/>
+              <line x1="27px" y1="20px" x2="27px" y2="34px" style="stroke:#25b99a; stroke-width:3; stroke-linecap:round;"/>
+              <line x1="20px" y1="27px" x2="34px" y2="27px" style="stroke:#25b99a; stroke-width:3; stroke-linecap:round;"/>
+            </svg>
+          </button>
+        </div>
+      </header>
+
+      <section class="lists">
+        <ul id="todolist" contenteditable="true"></ul>
+      </section>
+
+      <hr>
+
+      <section class="lists">
+        <ul id="donelist"></ul>
+      </section>
+
+    </section>
+  </body>
+
+</html>

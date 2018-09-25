@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Clock svg</title>
+    <style>
+
+      #canvas{
+      /*  width: 500px;*/
+        height: 400px;
+        border-radius: 500px;
+        margin:auto;
+      }
+      #bordo {
+        border-color: black;
+        border-radius: 500px;
+        border-width: 12px;
+        border-style: solid;
+        width: 770px;
+        margin: auto;
+        height: 770px;
+        box-shadow: inset -4px 2px 17px 2px rgba(0, 0, 0, 0.7),
+                    inset 6px 4px 21px rgba(0, 0, 0, 0.7);
+        background-image:  url(/home/leo/Documenti/WEB/TO_DO_LIST_APP/IMG/clock_2.svg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        display:flex;
+      }
+
+    </style>
+  </head>
+
+  <body>
+
+    <div id="clock">
+
+      <div id="bordo">
+
+        <canvas id="canvas" onload='ShowTime()'></canvas>
+
+      </div>
+
+    </div>
+
+    <script>
+
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext("2d");
+        ctx.translate(canvas.width/2, canvas.height/2);
+        var radius = canvas.height / 2;
+        setInterval(ShowTime, 1000);
+
+        function ShowTime() {
+          drawFace(ctx, radius);
+          drawTime(ctx, radius);
+        }
+
+        function drawFace(ctx, radius) {
+          ctx.beginPath();
+          ctx.arc(0, 0, radius, 0, 2*Math.PI);
+          ctx.fillStyle = 'white';
+          ctx.fill();
+
+          ctx.beginPath();
+          ctx.arc(0, 0, radius*0.1, 0, 2*Math.PI);
+          ctx.fillStyle = 'black';
+          ctx.fill();
+        }
+
+        function drawTime(ctx, radius){
+          var now = new Date();
+          var hour = now.getHours();
+          var minute = now.getMinutes();
+          var second = now.getSeconds();
+          //hour
+          hour=hour%12;
+          hour=(hour*Math.PI/6) + (minute*Math.PI/(6*60)) + (second*Math.PI/(360*60));
+          drawHand(ctx, hour, radius*0.5, radius*0.07);
+          //minute
+          minute=(minute*Math.PI/30) + (second*Math.PI/(30*60));
+          drawHand(ctx, minute, radius*0.8, radius*0.05);
+          // second
+          second=(second*Math.PI/30);
+          drawHand(ctx, second, radius*0.99, radius*0.02);
+        }
+
+        function drawHand(ctx, pos, length, width) {
+          ctx.beginPath();//preparati a tracciare un percorso;
+          ctx.lineWidth = width;//the path will have the width set like the width parameter
+          ctx.lineCap = "round";//end lines of the path will be round
+          ctx.moveTo(0,0);//start the path a 0,0 of the canvas, the center
+          ctx.rotate(pos);//ROTATE THE CANVAS to an angle set to the pos parameter
+          //set the end of the path at the point of coordinates
+          //x=0 and -lenght parameter so it can be set at a simple point in the canvas
+          //since all canvas rotate
+          ctx.lineTo(0, -length);
+          ctx.stroke();//draw the path
+          ctx.rotate(-pos);//rotate all canvas by -pos parameter it returns in the original position
+        }
+
+    </script>
+  </body>
+</html>
